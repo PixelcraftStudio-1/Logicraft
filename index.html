@@ -30,24 +30,31 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  border-bottom:1px solid #222;
+  border-bottom:2px solid rgba(150,150,150,0.25); /* gris */
 }
 
 header h1{
   font-size:1.9em;
   font-weight:700;
   letter-spacing:1px;
+  color:#ccc;
+  text-shadow:0 0 10px #777;
 }
 
+/* NAV */
 nav a{
-  color:#fff;
+  color:#ddd;
   text-decoration:none;
   margin-left:22px;
   transition:0.25s;
   font-weight:500;
+  border-bottom:2px solid transparent;
+  padding-bottom:4px;
 }
+
 nav a:hover{
-  color:#aaa;
+  color:#4da3ff; /* azul */
+  border-bottom:2px solid #4da3ff;
 }
 
 /* CONTENIDO */
@@ -164,10 +171,10 @@ footer{
 <header>
   <h1>Logicraft Studio</h1>
   <nav>
-    <a href="proyectos.html">Inicio</a>
+    <a href="index.html">Inicio</a>
     <a href="proyectos.html">Proyectos</a>
     <a href="servicios.html">Servicios</a>
-    <a href="equipo.html">Equipo</a>
+    <!-- Eliminado "Equipo" -->
     <a href="contacto.html">Contacto</a>
   </nav>
 </header>
@@ -177,7 +184,7 @@ footer{
   <div class="small-box">Estudio Profesional de Minecraft</div>
 
   <div class="big-text">Creamos</div>
-  <div class="typewriter">modelos epicos</div>
+  <div class="typewriter">modelos épicos</div>
 
   <p class="description">
     En Logicraft Studio transformamos ideas en <b>experiencias únicas</b>:
