@@ -3,196 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logicraft Studio | Servicios</title>
+<title>Logicraft Studio | Proyectos</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
 body {
-  background: linear-gradient(180deg,#0a0a0a 0%,#111 40%,#000 100%);
-  color:#fff;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  overflow-x:hidden;
+    background: #d9d9d9; /* FONDO GRIS */
 }
 
-/* Header */
-header {
-  background:#000;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  border-bottom:2px solid rgba(0,255,255,0.25);
-  box-shadow:0 2px 15px rgba(0,255,255,0.15);
-}
-header h1{
-  font-size:1.9em;
-  font-weight:700;
-  cursor:pointer;
-  color:#0ff;
-  text-shadow:0 0 10px #0ff;
-}
-header h1:hover{
-  filter:brightness(1.3);
-  text-shadow:0 0 18px #0ff;
+/* CONTENEDOR PRINCIPAL */
+.proyectos-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
 }
 
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:20px;
-  transition:0.3s;
-  font-weight:500;
-}
-nav a:hover{
-  color:#0ff;
-  text-shadow:0 0 10px #0ff;
+/* TÍTULO */
+.titulo {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #222;
+    text-transform: uppercase;
 }
 
-/* Main */
-main {
-  flex:1;
-  padding:100px 40px 60px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:50px;
+/* GRID DE PROYECTOS */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
-h2{
-  font-size:2.7em;
-  margin-bottom:20px;
-  color:#0ff;
-  text-shadow:0 0 15px rgba(0,255,255,0.4);
-  animation: glow 2.5s infinite alternate;
-}
-@keyframes glow {
-  from { text-shadow: 0 0 10px #0ff; }
-  to   { text-shadow: 0 0 25px #0ff; }
+/* TARJETA */
+.proyecto-card {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    border-top: 6px solid #007bff; /* LÍNEA AZUL */
+    transition: 0.3s;
 }
 
-p{
-  font-size:1.2em;
-  color:#ddd;
-  margin-bottom:40px;
-  text-align:center;
+.proyecto-card:hover {
+    transform: scale(1.03);
 }
 
-/* Servicios */
-.servicios-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  width:100%;
-  max-width:1000px;
+/* IMAGEN */
+.proyecto-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #007bff; /* BORDE AZUL */
 }
 
-.servicio{
-  background:#0b0b0b;
-  border:2px solid rgba(0,255,255,0.6);
-  border-radius:14px;
-  padding:30px 20px;
-  text-align:center;
-  box-shadow:0 0 15px rgba(0,255,255,0.15);
-  transition:0.35s ease-in-out;
-  transform:translateY(0);
-  position:relative;
-  overflow:hidden;
+/* NOMBRE */
+.proyecto-title {
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #007bff;
 }
 
-.servicio:hover{
-  transform:translateY(-8px) scale(1.03);
-  box-shadow:0 0 25px rgba(0,255,255,0.4);
-  border-color:#0ff;
-}
-
-.servicio::before{
-  content:"";
-  position:absolute;
-  width:120%;
-  height:120%;
-  top:-10%;
-  left:-10%;
-  opacity:0;
-  background:radial-gradient(circle,#0ff33 10%,transparent 70%);
-  transition:0.4s;
-}
-.servicio:hover::before{
-  opacity:0.2;
-}
-
-.servicio h3{
-  font-size:1.6em;
-  color:#0ff;
-  margin-bottom:15px;
-  text-shadow:0 0 12px rgba(0,255,255,0.4);
-}
-.servicio p{
-  color:#ccc;
-  font-size:1em;
-  line-height:1.5;
-}
-
-/* Footer */
-footer{
-  background:#000;
-  text-align:center;
-  padding:20px;
-  color:#aaa;
-  font-size:0.9em;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-
-/* Responsive */
-@media(max-width:900px){
-  main{padding:60px 20px;}
-  h2{font-size:2.2em;}
-  p{font-size:1em;}
+/* DESCRIPCIÓN */
+.proyecto-desc {
+    font-size: 14px;
+    color: #444;
+    margin-top: 6px;
 }
 </style>
 </head>
+
 <body>
 
-<header>
-<h1 onclick="window.location.href='index.html'">Logicraft Studio</h1>
+<div class="proyectos-container">
+    <h1 class="titulo">Nuestros Proyectos</h1>
 
-<nav>
-  <a href="index.html">Inicio</a>
-  <a href="proyectos.html">Proyectos</a>
-  <a href="servicios.html">Servicios</a>
-  <a href="contacto.html">Contacto</a>
-  <a href="equipo.html">Equipo</a>
-</nav>
-</header>
+    <div class="proyectos-grid">
 
-<main>
-  <h2>Nuestros Servicios</h2>
-  <p>Ofrecemos soluciones completas para todas tus necesidades en Roblox.</p>
+        <!-- PROYECTO 1 -->
+        <div class="proyecto-card">
+            <img src="imagenes/proyecto1.jpg" alt="Proyecto 1">
+            <h3 class="proyecto-title">Proyecto 1</h3>
+            <p class="proyecto-desc">
+                Descripción del proyecto número uno.
+            </p>
+        </div>
 
-  <div class="servicios-grid">
-    <div class="servicio">
-      <h3>Desarrollo de Juegos</h3>
-      <p>Diseñamos y programamos experiencias únicas para Roblox, adaptadas a tus ideas.</p>
+        <!-- PROYECTO 2 -->
+        <div class="proyecto-card">
+            <img src="imagenes/proyecto2.jpg" alt="Proyecto 2">
+            <h3 class="proyecto-title">Proyecto 2</h3>
+            <p class="proyecto-desc">
+                Descripción del proyecto número dos.
+            </p>
+        </div>
+
+        <!-- PROYECTO 3 -->
+        <div class="proyecto-card">
+            <img src="imagenes/proyecto3.jpg" alt="Proyecto 3">
+            <h3 class="proyecto-title">Proyecto 3</h3>
+            <p class="proyecto-desc">
+                Otro proyecto que puedes mostrar.
+            </p>
+        </div>
+
+        <!-- PROYECTO 4 -->
+        <div class="proyecto-card">
+            <img src="imagenes/proyecto4.jpg" alt="Proyecto 4">
+            <h3 class="proyecto-title">Proyecto 4</h3>
+            <p class="proyecto-desc">
+                Puedes agregar más proyectos fácilmente.
+            </p>
+        </div>
+
     </div>
-    <div class="servicio">
-      <h3>Diseño de Mapas</h3>
-      <p>Modelado de escenarios y ambientaciones profesionales para tus proyectos.</p>
-    </div>
-    <div class="servicio">
-      <h3>Optimización de Juegos</h3>
-      <p>Mejoramos rendimiento, iluminación y jugabilidad para una experiencia fluida.</p>
-    </div>
-  </div>
-</main>
-
-<footer>
-<p>© 2025 Logicraft Studio - Todos los derechos reservados</p>
-</footer>
+</div>
 
 </body>
 </html>
