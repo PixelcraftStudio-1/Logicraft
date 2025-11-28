@@ -20,7 +20,7 @@ body{
 }
 
 /* ========================== */
-/*        LOADER              */
+/*        LOADER (GIF)        */
 /* ========================== */
 
 #loader{
@@ -37,6 +37,12 @@ body{
   animation-delay:3.2s;
 }
 
+.gif-steve{
+  width:180px;
+  height:auto;
+  border-radius:10px;
+}
+
 .loading-text{
   margin-top:25px;
   font-size:1.4em;
@@ -44,113 +50,7 @@ body{
   font-weight:600;
 }
 
-/* Steve */
-.steve{
-  position:relative;
-  width:120px;
-  height:200px;
-  transform-origin:bottom center;
-}
-
-.steve .head{
-  width:55px;
-  height:55px;
-  background:#000;
-  position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  border-radius:4px;
-}
-
-.steve .body{
-  width:70px;
-  height:90px;
-  background:#000;
-  position:absolute;
-  top:60px;
-  left:50%;
-  transform:translateX(-50%);
-}
-
-.steve .arm{
-  width:20px;
-  height:70px;
-  background:#000;
-  position:absolute;
-  top:60px;
-  left:5px;
-  transform-origin:top;
-  animation:picar 0.6s infinite;
-}
-
-.steve .arm2{
-  width:20px;
-  height:70px;
-  background:#000;
-  position:absolute;
-  top:60px;
-  right:5px;
-}
-
-/* Bloque */
-.block{
-  width:95px;
-  height:95px;
-  background:#000;
-  margin-top:20px;
-  position:relative;
-  animation:romper 3s forwards;
-}
-
-/* Grietas */
-.crack{
-  position:absolute;
-  background:#fff;
-  opacity:0;
-}
-
-.crack1{
-  width:60%; height:4px;
-  top:30%; left:20%;
-  animation:crack1 3s forwards;
-}
-.crack2{
-  width:4px; height:60%;
-  top:20%; left:48%;
-  animation:crack2 3s forwards;
-}
-.crack3{
-  width:50%; height:4px;
-  top:60%; left:25%;
-  animation:crack3 3s forwards;
-}
-
-/* Animaciones del loader */
-@keyframes picar{
-  0%{ transform:rotate(0deg); }
-  50%{ transform:rotate(-35deg); }
-  100%{ transform:rotate(0deg); }
-}
-
-@keyframes crack1{
-  60%{opacity:1;}
-  100%{opacity:1;}
-}
-@keyframes crack2{
-  75%{opacity:1;}
-  100%{opacity:1;}
-}
-@keyframes crack3{
-  90%{opacity:1;}
-  100%{opacity:1;}
-}
-
-@keyframes romper{
-  0%{}
-  100%{transform:scale(1.05);}
-}
-
+/* Animación de desaparición */
 @keyframes hideLoader{
   to{ opacity:0; visibility:hidden; }
 }
@@ -287,21 +187,11 @@ footer{
 
 <body>
 
-<!-- LOADER -->
+<!-- ========================== -->
+<!--          LOADER            -->
+<!-- ========================== -->
 <div id="loader">
-  <div class="steve">
-    <div class="head"></div>
-    <div class="body"></div>
-    <div class="arm"></div>
-    <div class="arm2"></div>
-  </div>
-
-  <div class="block">
-    <div class="crack crack1"></div>
-    <div class="crack crack2"></div>
-    <div class="crack crack3"></div>
-  </div>
-
+  <img src="steve.gif" class="gif-steve" alt="Cargando...">
   <p class="loading-text">Cargando...</p>
 </div>
 
